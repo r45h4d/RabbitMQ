@@ -19,17 +19,18 @@ repositories {
 }
 
 dependencies {
-    //spring
+    // Spring
     implementation "org.springframework.boot:spring-boot-starter-web"
+    implementation "org.springframework.boot:spring-boot-starter-amqp" // Add this line
 
-    //lombok
+    // Lombok
     compileOnly "org.projectlombok:lombok"
     annotationProcessor "org.projectlombok:lombok"
 
-    //swagger
+    // Swagger
     implementation "org.springdoc:springdoc-openapi-ui:$openApiVersion"
 
-    //testing
+    // Testing
     testImplementation "org.apache.groovy:groovy:$groovyVersion"
     testImplementation "org.spockframework:spock-spring:$spockSpringVersion"
     testImplementation "io.github.benas:random-beans:$randomBeansVersion"
@@ -38,4 +39,12 @@ dependencies {
 
 test {
     useJUnitPlatform()
+}
+
+ext {
+    springBootVersion = '3.1.0' // Adjust as necessary
+    openApiVersion = '1.6.14' // Example version
+    groovyVersion = '4.0.0' // Example version
+    spockSpringVersion = '2.0-M5' // Example version
+    randomBeansVersion = '4.0.0' // Example version
 }
